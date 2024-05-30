@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password  toggle</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #15bfdd;
+
+        }
+
+        .container{
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .password-container{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .password-container input{
+            padding: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            flex: 1;
+        }
+
+        .password-container button{
+            padding: 10px;
+            border-left: none;
+            outline: none;
+            cursor: pointer;
+            color: white;
+            background-color: #007BFF;
+        }
+
+        .password-container button:hover{
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>password visibility toggle</h2>
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Enter your password">
+            <button id="togglePassword">Show</button>
+        </div>
+    </div>
+
+    <script>
+
+        let passwordField = document.getElementById('password');
+        let togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('click',function(){
+            if(passwordField.type === 'password'){
+                passwordField.type = 'text';
+                togglePassword.textContent = 'Hide';
+            }
+            else{
+                passwordField.type = 'password';
+                togglePassword.textContent = 'Show';
+            }
+        });
+
+
+    </script>
+</body>
+</html>
